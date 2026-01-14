@@ -1,0 +1,181 @@
+/* Header Styles */
+
+/* 1 */
+.header-wrapper {
+    width: 100%;
+    height: auto;
+}
+
+/* 2 */
+header {
+    position: fixed;
+    width: var(--ls-full);
+    height: auto;
+    padding: 1.75rem 0;
+    z-index: 15; /* 겹칠 때의 순서 */
+}
+
+/* 3 */
+header.active {
+    background: #fff;
+    border-bottom: 1px solid var(--color-gray-d);
+}
+
+/* 4 */
+header .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr; /* 헤더의 내용(Home,Shop,Gallery | SOAPLY | SNS 를 2:1:2로 분할) */
+    align-items: center;
+}
+
+/* 5 */
+header .container > * {
+    display: flex;
+}
+
+/* 6 */
+header .nav-lists {
+    display: flex;
+}
+
+/* 8 */
+header .nav-lists li {
+    padding: 0 2rem 0 0; /* 위 오른쪽 아래 왼쪽 순서 */
+}
+
+/* 9 */
+header .nav-lists li a {
+    font-size: var(--fs-14);
+}
+
+/* 10 */
+/* Home,Shop,Gallery에 마우스를 갖다대면 밑줄이 뜸 */
+header .nav-lists li a:hover {
+    text-decoration: underline;
+}
+
+/* 11 */
+header .logo{
+    justify-content: center;
+}
+
+/* 12 */
+header .logo a {
+    width: 100px;
+}
+
+/* 13 */
+header .logo img {
+    width: 100%;
+}
+
+/* 14 */
+header .info {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 17 */
+header .info li {
+    padding: 0 0 0 1rem;
+    display: flex;
+}
+
+/* 18 */
+header .info li a {
+    font-size: var(--fs-14);
+}
+
+/* 7 */
+header .info li.sns ul {
+    display: flex;
+}
+
+/* 15 */
+header .info li.sns li a {
+    width: 20px;
+}
+
+/* 16 */
+header .info li.sns li a img {
+    width: 100%;
+}
+
+/* 19 */
+header li.cart a {
+    display: flex;
+    align-items: center;
+    background: var(--color-black);
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 0 0.5rem; /*위아래: 0, 좌우: 0.25rem*/
+    height: 1.8rem;
+}
+
+/* 20 */
+header li.cart a em{
+    font-style: normal; /* em을 사용해서 기울여졌던 글씨를 다시 원래대로 돌림 */
+}
+
+/* 22 */
+header li.user {
+    padding-left: 0.25rem;
+}
+
+/* 21 */
+header li.user a {
+    background: transparent;
+    border: 1px solid var(--color-black);
+    border-radius: 0.25rem;
+    padding: 0 0.5rem;
+    height: 1.8rem;
+    font-size: var(--fs-18);
+    display: flex;
+    align-items: center;
+}
+
+
+/* Landing Section Styles */
+
+/* 24 */
+#main-section {
+    padding: 0;
+    width: var(--ls-full);
+    height: 100vh;
+    min-height: 100vh;
+
+    /* 25-1 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 25 */
+#main-section img {
+    width: var(--ls-full);
+    height: var(--ls-full);
+    min-width: 1280px;
+
+    /* 25-2 */
+    position: absolute;
+    object-fit: cover; /* object-fit:cover는 꽉 채우고 이미지가 커지는 부분은 넘치게 만드는 것 */
+}
+
+/* 26 */
+#main-section .landing-text-box {
+    z-index: 10;
+}
+
+/* 27 */
+#main-section .landing-text-box h1 {
+    font-size: var(--fs-title);
+    line-height: 1.4; /* 단위를 따로 적어주지 않으면 기본 단위는 em이다 */
+    font-weight: var(--fw-400);
+}
+
+/* 28 */
+#main-section .landing-text-box p {
+    padding: var(--el-medium) 0;
+    width: var(--ls-1-3);
+}
