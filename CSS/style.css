@@ -170,7 +170,7 @@ header li.user a {
 /* 27 */
 #main-section .landing-text-box h1 {
     font-size: var(--fs-title);
-    line-height: 1.4; /* 단위를 따로 적어주지 않으면 기본 단위는 em이다 */
+    line-height: 1.4; /* 단위를 따로 적어주지 않으면 기본 단위는 em이다. */
     font-weight: var(--fw-400);
 }
 
@@ -179,3 +179,5 @@ header li.user a {
     padding: var(--el-medium) 0;
     width: var(--ls-1-3);
 }
+
+
