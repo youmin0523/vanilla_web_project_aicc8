@@ -365,3 +365,67 @@
     padding: var(--el-medium);
     font-size: var(--fs-small-text);
 }
+
+/* Review Section Styles */
+/* 66 */
+.review-section {
+    background: url(../images/review-background.jpeg) no-repeat center center / cover;
+}
+
+/* 67 */
+.review-section .reviews {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 68 */
+.review-section .review-frame {
+    width: var(--ls-1-3);
+    padding: var(--el-medium);
+}
+
+/* 69 */
+.review-section .review-item {
+    background: #fff;
+    padding: var(--el-wide);
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+/* 70 */
+.review-section .review-item p {
+    font-size: var(--fs-small-text);
+    margin-bottom: var(--el-medium);
+    /* 4줄까지만 글 라인 표시 후 축약 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+/* 71 */
+.review-section .review-writer {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--el-small);
+    align-items: center;
+}
+
+/* 72 */
+.review-section .review-writer img {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+/* 73 */
+.review-section .review-writer h4 {
+    font-size: var(--fs-name);
+    font-weight: var(--fw-400);
+}
+
+/* 74 */
+.review-section .review-writer em {
+    font-style: normal;
+    font-size: var(--fs-small-text);
+}
