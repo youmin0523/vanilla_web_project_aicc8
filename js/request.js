@@ -31,8 +31,46 @@ async function getRequest (url) {
     });
 }
 
+/* 12 */
+function createSliderTemplate (item) {
+    /* 8 */
+    const { pro_img, pro_name, pro_desc } = item;
+    return `
+        <div class="swiper-slide">
+            <div class="slider-image">
+                <img src="images/${pro_img}" alt="slide image">
+            </div>
+            <div class="slider-text">
+                <h4>${pro_name}</h4>
+                <p>${pro_desc}</p>
+                <a href="#" class="common-button">자세히 보기</a>
+            </div>
+        </div>
+    `
+}
+
+function createOfferTemplate (item) {
+    /* 8 */
+    const { pro_img, pro_name, pro_desc, pro_price } = item;
+    return `
+        <div class="product-frame">
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="images/${pro_img}" alt="item image">
+                </div>
+                <div class="product-text">
+                    <h4>${pro_name}</h4>
+                    <strong>${pro_price}원</strong>
+                    <p>${pro_desc}</p>
+                    <a href="#" class="common-button">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    `
+}
+
 /* 3 */
-async function getProducts(n, wrapper) {
+async function getProducts(n, wrapper, template) {
     const getProductsUrl = 
     `https://www.dabipyeung.com/soaply_backend/model/get_products.php?qnt=${n}`;
 
@@ -44,30 +82,15 @@ async function getProducts(n, wrapper) {
         let dataElement = '';
 
         /* 5 */
-        data.map((item) => {
-                /* 8 */
-                const { pro_img, pro_name, pro_desc } = item;
-            /* 7 */
-            dataElement += `
-                        <div class="swiper-slide">
-                            <div class="slider-image">
-                                <img src="images/${pro_img}" alt="slide image">
-                            </div>
-                            <div class="slider-text">
-                                <h4>${pro_name}</h4>
-                                <p>${pro_desc}</p>
-                                <a href="#" class="common-button">자세히 보기</a>
-                            </div>
-                        </div>
-            `;
-        });
+        const htmlString = data.map(template).join('');
 
         /* 9 */
-        wrapper.insertAdjacentHTML('beforeend', dataElement);
+        wrapper.insertAdjacentHTML('beforeend', htmlString);
     } catch (error) { 
         // 요청시 에러 사항
         console.log(`Error: ${error}`);
     }
 }
 
-getProducts (4, sliderWrapper);
+getProducts (4, sliderWrapper, createSliderTemplate);
+getProducts (3, offersWrapper, createOfferTemplate);

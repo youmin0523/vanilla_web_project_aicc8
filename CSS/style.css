@@ -321,10 +321,22 @@
     padding: var(--el-medium);
 }
 
+/* 65 */
+.offers-section .product-img {
+    width: var(--ls-full);
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.25rem;
+}
+
 /* 60 */
 .offers-section .product-frame img {
     width: var(--ls-full);
-    border-radius: 0.25rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* 61 */
