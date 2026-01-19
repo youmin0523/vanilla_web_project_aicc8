@@ -503,3 +503,28 @@
 .insta-section .insta-info .insta-id i {
     font-size: var(--fs-20);
 }
+
+/* Footer Section Styles */
+/* 86 */
+footer {
+    padding: 3rem 0;
+    width: var(--ls-full);
+    height: auto;
+}
+
+/* 87 */
+footer .footer-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 88 */
+footer .footer-upper .footer-info {
+    display: flex;
+}
+
+/* 89 */
+footer .footer-upper .footer-info .footer-nav {
+    display: flex;
+}
